@@ -1,0 +1,23 @@
+<h7>developed : <a href="http://www.haios.org/">haios product</a></h7>
+<br>
+<br>
+<form action="/brands" method="post">
+  {% csrf_token %}
+  k : <input type="text" name = "k" value="{{k}}">
+  cid : <input type="text" name = "cid" value="{{cid}}">
+  <input type="submit" value="go">
+</form>
+
+<h4>totalProducts : {{totalProducts}}<h4>
+<h4>totalWithbrands : {{totalWithbrands}}<h4>
+
+<h4>k : {{k}} </h4>
+
+{% for cluster in clusters.values %}
+     {% for product in cluster %}
+         <br>
+         {{product}}
+     {% endfor %}
+      <br>
+==================================================================================
+{% endfor %}

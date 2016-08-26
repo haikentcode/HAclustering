@@ -1,0 +1,18 @@
+
+<form action="/feature" method="post">
+  {% csrf_token %}
+  cid : <input type="text" name = "cid" value="{{cid}}">
+  <input type="submit" value="go">
+</form>
+
+
+<h4>totalProducts : {{totalProducts}}<h4>
+
+{% for feature in features %}
+     {% for key,value in feature.iteritems %}|
+        {% if value %}
+           {{key}}:{{value}}
+        {% endif %}
+      {% endfor %}
+  <br>
+  {% endfor %}
